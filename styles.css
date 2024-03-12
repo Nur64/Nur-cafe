@@ -117,3 +117,21 @@ footer {
 body, header, nav, section, footer {
     animation: fadeIn 2s ease-in-out;
 }
+
+/* Estilo para todos los íconos de Font Awesome */
+.fa {
+    padding: 10px;
+    font-size: 10px;
+    width: 43px;
+    text-align: center;
+    text-decoration: none;
+  }
+  /* Efecto de hover (opcional) */
+  .fa:hover {
+    opacity: 0.7;
+  }
+  /* Estilo específico para Instagram */
+  .fa-instagram {
+    background: #E4405F;
+    color: white;
+  }  
