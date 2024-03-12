@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nur Café</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js"></script>
+    <style>
+        /* Estilos adicionales para el encabezado con imagen de fondo */
+        header {
+            background-image: url('/home/kasd/Descargas/cafeteria.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <!-- La imagen del logo se mantiene, pero puedes optar por ocultarla si prefieres que solo se vea la imagen de fondo -->
+    <img src="/home/kasd/Descargas/Screenshot_20240307_104230_Bing.png" 
+    width="83"
+    height="83"
+    alt="logo"
+    class="logo-image">
+
+    <h1>Bienvenidos a Nur Café</h1>
+    <p>Tu destino para un café con encanto oriental</p>
+</header>
+
+    <nav>
+        <ul>
+             <li><a href="inicio.html">Inicio</a></li>
+             <li><a href="cafes.html">Cafés</a></li>
+             <li><a href="frappes.html">Frappés</a></li>
+             <li><a href="comida y dulces.html">Comida y dulces</a></li>
+         </ul>
+        </nav>
+        <!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Sección de Reseñas de Cafetería</title>
+<style>
+  .resena { border: 1px solid #ddd; margin: 10px; padding: 10px; }
+  .nombre { font-weight: bold; }
+  .puntuacion { font-style: italic; }
+</style>
+<script>
+// Función para cargar reseñas guardadas
+function cargarResenas() {
+  var resenas = JSON.parse(localStorage.getItem('resenas')) || [];
+  resenas.forEach(function(resena) {
+    publicarResena(resena.nombre, resena.puntuacion, resena.comentario, false);
+  });
+}
+
+// Función para publicar reseña
+function publicarResena(nombre, puntuacion, comentario, guardar = true) {
+  var seccionResenas = document.getElementById('resenas');
+
+  var nuevaResena = document.createElement('div');
+  nuevaResena.classList.add('resena');
+
+  nuevaResena.innerHTML = '<span class="nombre">' + nombre + '</span>' +
+                          '<span class="puntuacion">Puntuación: ' + puntuacion + '</span>' +
+                          '<p>' + comentario + '</p>';
+
+  seccionResenas.appendChild(nuevaResena);
+
+  // Guardar en localStorage si es necesario
+  if (guardar) {
+    var resenas = JSON.parse(localStorage.getItem('resenas')) || [];
+    resenas.push({ nombre: nombre, puntuacion: puntuacion, comentario: comentario });
+    localStorage.setItem('resenas', JSON.stringify(resenas));
+  }
+}
+
+// Evento para cargar reseñas al cargar la página
+window.onload = cargarResenas;
+</script>
+</head>
+<body>
+
+<section id="resenas">
+  <h2>Reseñas de la Cafetería</h2>
+</section>
+
+<!-- Formulario para nueva reseña -->
+<form onsubmit="event.preventDefault(); publicarResena(document.getElementById('nombre').value, document.getElementById('puntuacion').value, document.getElementById('comentario').value);">
+  <input type="text" id="nombre" placeholder="Tu nombre" required>
+  <select id="puntuacion">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5" selected>5</option>
+  </select>
+  <textarea id="comentario" placeholder="Escribe tu reseña aquí" required></textarea>
+  <button type="submit">Publicar Reseña</button>
+</form>
+
+</body>
+</html>

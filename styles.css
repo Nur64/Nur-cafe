@@ -1,0 +1,119 @@
+/* Reset básico para estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f6f6f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #036635; /* Verde Starbucks */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 10px 0;
+}
+
+nav a {
+    color: #036635;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: #333;
+}
+
+/* Botones de navegación */
+nav button {
+    background-color: #e0e0e0;
+    color: #036635;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+nav button:hover {
+    background-color: #d4d4d4;
+}
+
+/* Estilos para secciones */
+section {
+    padding: 40px 20px;
+    margin: 20px 0;
+    background-color: #fff;
+}
+
+/* Pie de página */
+footer {
+    background-color: #036635;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* CSS para optimización móvil y animaciones */
+@media only screen and (max-width: 600px) {
+    #bienvenida {
+      padding: 10px;
+      font-size: 14px;
+    }
+    h1 {
+      font-size: 24px;
+    }
+    p {
+      font-size: 16px;
+    }
+    /* Ajustar tamaños de imágenes y otros elementos según sea necesario */
+  }
+  
+  /* Animaciones suaves para la carga de la página */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  #bienvenida {
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  /* Interactividad: Cambio de color en botones al pasar el cursor */
+  button:hover, a:hover {
+    background-color: #d2b48c; /* Cambia al color que prefieras */
+    transition: background-color 0.5s ease-in-out;
+  }
+  /* Aplicar animación a todos los elementos al cargar */
+body, header, nav, section, footer {
+    animation: fadeIn 2s ease-in-out;
+}
